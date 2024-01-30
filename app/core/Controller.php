@@ -6,10 +6,9 @@ class Controller{
         $modelName = ucfirst($model).'Model';
         require_once '../app/models/' .$modelName.'.php';
         return new $modelName();
-
     }
 
-    public function view($view , $data = []){
+    public function view($view , $title= "Document",  $data = []){
         // Check if the view file exists
         $viewFile = "../app/views/" . $view . ".php";
         if (file_exists($viewFile)) {
@@ -17,6 +16,8 @@ class Controller{
             extract($data);
 
             // Include the view file
+            require_once "../app/includes/header.inc.php";
+
             require_once $viewFile;
         } else {
             // If the view file doesn't exist, you may want to handle this case accordingly
