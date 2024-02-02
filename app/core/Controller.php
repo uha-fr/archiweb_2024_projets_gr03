@@ -20,8 +20,7 @@ class Controller{
 
             require_once $viewFile;
         } else {
-            // If the view file doesn't exist, you may want to handle this case accordingly
-            die("View file not found: " . $view);
+            header("Location: 404.php");
         }
     }
 }

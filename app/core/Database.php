@@ -9,19 +9,32 @@ class Database{
 
     public function __construct()
     {
-        $this->dbcon = new PDO('mysql:dbname=recipe; host=localhost; charset=utf8','root', '');
-        
-        $this->dbcon->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
-        $this->dbcon->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);       
+        $dsn = 'mysql:host=localhost;dbname=recipe';
+        $username = 'root';
+        $password = '';
+        try {
+            $this->dbcon = new PDO($dsn, $username, $password);
+            $this->dbcon->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
+            $this->dbcon->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        } catch (PDOException $e) {
+            die("Database connection failed: " . $e->getMessage());
+        }    
+    }
+
+    public function __toString(){
+        return print_r($this->dbcon , true);  //return the object's value as a string.
     }
 
     //This method for instantiating database object using the Singleton Design pattern.
     public static function open_db(){
-        if(self::$database ===null){
-            self::$database = new Database();
+        try {
+            if (self::$database === null) {
+                self::$database = new Database();  
+            }
+            return self::$database;
+        } catch (PDOException $e) {
+            die("Database connection failed: " . $e->getMessage());
         }
-
-        return self::$database;
     }
 
     //Prepares a SQL query for execution and assign a statement object to $this->stmt
