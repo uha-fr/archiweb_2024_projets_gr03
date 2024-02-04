@@ -15,7 +15,7 @@
          --text-secondary: #fbfcfb;
       }
 
-      h2 {
+      h3 {
          font-size: 24px;
          background-color: var(--primary);
          color: white;
@@ -25,4 +25,4 @@
     </style>
 </head>
 
-<h2>Hi, utilisateur</h2>
+<h3>Content de vous revoir</h3>
