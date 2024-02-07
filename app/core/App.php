@@ -14,6 +14,8 @@ class App{
             if(file_exists("../app/controllers/".$contollerName.".php")){
                 $this->controller = $contollerName;
                 unset($url[1]);
+            }else{
+                $this->notfound();
             }
         }
         require_once("../app/controllers/". $this->controller .".php");
@@ -23,6 +25,8 @@ class App{
             if(method_exists($this->controller, $url[2])){
                 $this->method = $url[2];
                 unset($url[2]);
+            }else{
+                $this->notfound();
             }
         }
 
@@ -39,5 +43,9 @@ class App{
             return explode("/", filter_var(rtrim($_GET['url'],'/'), FILTER_SANITIZE_URL));
             
         }
+    }
+
+    public function notfound(){
+        $this->method= "notfound";
     }
 }
