@@ -15,12 +15,15 @@ class Controller{
             // Extract the data array into individual variables
             extract($data);
 
-            // Include the view file
             require_once "../app/includes/header.inc.php";
 
             require_once $viewFile;
         } else {
-            header("Location: 404.php");
+            header("Location : 404");
         }
+    }
+
+    public function notfound(){
+        $this->view("404");
     }
 }
