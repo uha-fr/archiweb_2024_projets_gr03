@@ -27,7 +27,7 @@
                     ];
 
                     foreach ($recipes as $recipe) {
-                        include 'components/recette_card.php';
+                        include 'components/cardRecipe.php';
                     }
                 ?>
                      
