@@ -38,3 +38,4 @@ define('DB_PASSWORD', 'votre_mot_de_passe');
 ### Backlog
 ### Schéma MLD de la base de données
 ### Identité visuelle
+lien vers le figma : [visual identity board] https://www.figma.com/file/ueHI18DFaa58xfa1ceqSSJ/Visual-identity?type=design&node-id=0%3A1&mode=design&t=ErciRZZByM3St0u5-1
