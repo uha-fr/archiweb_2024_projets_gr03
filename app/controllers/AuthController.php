@@ -124,7 +124,7 @@ class AuthController extends Controller
 
             }
 
-            $this->view('new-login', 'Sign Up', $this->data);
+            $this->view('signup', 'Sign Up', $this->data);
         
     }
 
@@ -177,7 +177,5 @@ class AuthController extends Controller
 
     }
 
-    public function newLogin(){
-        $this->view("new-login","New Login");
-    }
+
 }

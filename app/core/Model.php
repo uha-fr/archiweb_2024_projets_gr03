@@ -12,9 +12,9 @@ class Model{
     public function __construct()
     {
         // Initialize the database connection
-        $dsn = 'mysql:host=localhost;dbname=recipe';
-        $username = 'root';
-        $password = '';
+        $dsn = 'mysql:host=' . DB_HOST . ';dbname=' . DB_NAME;
+        $username = DB_USER;
+        $password = DB_PASSWORD;
 
         try {
             $this->db = new PDO($dsn, $username, $password);
