@@ -24,7 +24,7 @@
                     ];
 
                     foreach ($nutritionnistes as $nutri) {
-                        //include 'components/recette_card.php';
+                        include 'components/cardNutri.php';
                     }
                 ?>
                      
