@@ -10,7 +10,7 @@
         }
         #signUpForm .form-header .stepIndicator.finish {
             font-weight: 600;
-            color: #5a67d8;
+            color: #93BE76;
         }
         #signUpForm .form-header .stepIndicator::before {
             content: "";
@@ -21,17 +21,17 @@
             z-index: 9;
             width: 20px;
             height: 20px;
-            background-color: #c3dafe;
+            background-color: #C6E0B9;
             border-radius: 50%;
-            border: 3px solid #ebf4ff;
+            border: 3px solid #e2fcd4;
         }
         #signUpForm .form-header .stepIndicator.active::before {
-            background-color: #a3bffa;
-            border: 3px solid #c3dafe;
+            background-color: #C6E0B9;
+            border: 3px solid #e2fcd4;
         }
         #signUpForm .form-header .stepIndicator.finish::before {
-            background-color: #5a67d8;
-            border: 3px solid #c3dafe;
+            background-color: #5F8B41;
+            border: 3px solid #C6E0B9;
         }
         #signUpForm .form-header .stepIndicator::after {
             content: "";
@@ -43,10 +43,10 @@
             background-color: #f3f3f3;
         }
         #signUpForm .form-header .stepIndicator.active::after {
-            background-color: #a3bffa;
+            background-color: #93BE76;
         }
         #signUpForm .form-header .stepIndicator.finish::after {
-            background-color: #5a67d8;
+            background-color: #5F8B41;
         }
         #signUpForm .form-header .stepIndicator:last-child:after {
             display: none;
@@ -155,7 +155,7 @@
         <span class="absolute md:right-7 right-2 top-1/2 transform -translate-y-1/2 text-slate-600">Kg</span>
     </div>
     <div class="mb-4 relative">
-        <input type="number" name="taille" id="taille" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Votre taiile" value="<?php echo isset($_SESSION['signup_input']['firstname']) ? htmlspecialchars($_SESSION['signup_input']['firstname']) : ''; ?>" required="">
+        <input type="number" name="taille" id="taille" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Votre taille" value="<?php echo isset($_SESSION['signup_input']['firstname']) ? htmlspecialchars($_SESSION['signup_input']['firstname']) : ''; ?>" required="">
         <span class="absolute md:right-7 right-2 top-1/2 transform -translate-y-1/2 text-slate-600">Cm</span>
 
     </div>
@@ -172,7 +172,7 @@
     <button
       type="button"
       id="nextBtn"
-      class="flex-1 border border-transparent focus:outline-none p-3 rounded-md text-center text-white bg-indigo-600 hover:bg-indigo-700 text-lg"
+      class="flex-1 border border-transparent focus:outline-none p-3 rounded-md text-center text-white bg-[#5F8B41] hover:bg-[#93BE76] text-lg"
       onclick="nextPrev(1)">
       Suivant
     </button>
