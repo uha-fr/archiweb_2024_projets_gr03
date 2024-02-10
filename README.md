@@ -32,3 +32,7 @@ define('DB_USER', 'votre_utilisateur');
 define('DB_PASSWORD', 'votre_mot_de_passe');
 
 ?>
+```
+## Lancement du web-app
+Aprés l'installation et la configuration vous pouvez accéder à l'application par cette url :
+`http://localhost/archiweb_2024_projets_gr03/public/`
