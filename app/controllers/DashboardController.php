@@ -64,4 +64,12 @@ class DashboardController extends Controller
         header('Location: ' . BASE_URL . 'auth/login');
         exit();
     }
+
+    public function recipes(){
+        $this->view("users/recipes", 'Recette', ['userDetails' => $this->userDetails]);
+    }
+
+    public function nutritionnistes(){
+        $this->view("users/nutritionnistes", 'Nutritionniste', ['userDetails' => $this->userDetails]);
+    }
 }

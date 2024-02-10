@@ -19,7 +19,7 @@
             </div>
         </div>
         <div class="flex items-center justify-center">
-            <button type="button" class="modify-info text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Modifier mes infos</button>
+            <button type="button" class="modify-info text-white bg-[#93BE76] hover:bg-[#5F8B41] focus:ring-4 focus:ring-[#C6E0B9] font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-[#93BE76] dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Modifier mes infos</button>
             <button type="button" class="py-2.5 px-5 me-2 mb-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">Changer Mot de passe</button>
         </div>
     </div>
@@ -81,7 +81,7 @@
             </li>
         </ul>
 
-      <button type="submit" class="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Modifier</button>
+      <button type="submit" class="flex w-full justify-center rounded-md bg-[#93BE76] px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-[#C6E0B9] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#C6E0B9]">Modifier</button>
 
   </form>
     </div>
