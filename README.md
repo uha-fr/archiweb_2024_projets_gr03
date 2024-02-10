@@ -32,3 +32,9 @@ define('DB_USER', 'votre_utilisateur');
 define('DB_PASSWORD', 'votre_mot_de_passe');
 
 ?>
+```
+
+##Documentation
+###Backlog
+###Schéma MLD de la base de données
+###Identité visuelle
