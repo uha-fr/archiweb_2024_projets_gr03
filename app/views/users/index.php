@@ -1,5 +1,3 @@
-
-
 <body class="relative">
     <?php
         include "components/sidebar.php";
@@ -9,18 +7,16 @@
             include "components/navbar.php";
         ?>
         <div class="p-4 border-2 border-gray-200 border-dashed rounded-lg dark:border-gray-700">
-            
-
             <div class="grid  gap-2 mb-4">
                 <div>
-                    <div class="grid grid-cols-2 gap-2 mb-4">
-                        <div class="h-full w-full p-5 rounded bg-gray-50 h-28 dark:bg-gray-800">
-                            <p> Calendrier </p>
+                    <div class="grid grid-cols-2 gap-2">
+                        <div class="h-full w-full p-5 rounded bg-[#C6E0B9] h-28 dark:bg-[#C6E0B9]">
+                            <p class="mb-3 text-l font-bold"> Calendrier </p>
                             <?php
                                 include "components/calendar.php";
                             ?>   
                         </div>
-                        <div class="h-full p-5 rounded bg-gray-50 h-28 dark:bg-gray-800">
+                        <div class="h-full p-5 rounded bg-[#C6E0B9] h-28 dark:bg-[#C6E0B9]">
                             <?php
                          include "components/suivi.php";
                         ?>   
@@ -28,14 +24,27 @@
                     </div>
                 </div>
 
-                <div class="h-full p-5 rounded bg-gray-50 h-28 dark:bg-gray-800">
-                    <p> Recette </p>
+                <div class="h-full p-5 rounded bg-[#C6E0B9] h-28 dark:bg-[#C6E0B9]">
+                    <p class="mb-3 text-l font-bold"> Recette favoris</p>
+                    <div class="p-3 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3 gap-5">
+                        <?php
+                        $recipes = [
+                            ['title' => 'Recipe 1', 'image' => 'https://www.foodiesfeed.com/wp-content/uploads/2023/12/seafood-soup.jpg', 'description' => 'Description of Recipe 1'],
+                            ['title' => 'Recipe 2', 'image' => 'https://www.foodiesfeed.com/wp-content/uploads/2023/12/seafood-soup.jpg', 'description' => 'Description of Recipe 2'],
+                            ['title' => 'Recipe 3', 'image' => 'https://www.foodiesfeed.com/wp-content/uploads/2023/12/seafood-soup.jpg', 'description' => 'Description of Recipe 3'],
+                            //...
+                        ];
+
+                        foreach ($recipes as $recipe) {
+                            include 'components/recette_card.php';
+                        }
+                    ?>
+
                     <?php
-                        include "components/listRecipes.php";
-                    ?>   
+                        //include "components/listRecipes.php";
+                    ?>
+                    </div> 
                 </div>
-
-
             </div>
         </div>
     </div>
