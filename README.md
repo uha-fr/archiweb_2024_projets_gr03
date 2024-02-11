@@ -51,7 +51,7 @@ Pour le sprint 1:
 | Moyenne  | Conception d'une Interface pour la Gestion des Profils | Créer une interface pour gérer le profil nutrisionite.               | Sonia|
 | Moyenne  | Conception d'une Interface pour la Gestion des Profils | Créer une interface pour gérer le profil admin.                      | Ahcene |
 | Basse    | Test et Validation                                     | Tester les fonctionnalités et assurer la sécurité des formulaires.   | Sonia |
-| Basse    | Documentation                                          | Documenter les choix techniques et configurations.                   | Badr |
+| Basse    | Documentation                                          | Documenter les choix techniques et configurations.                   | Ahcene |
 ### Schéma actuelle de la base de données
 ### Identité visuelle
 lien vers le figma : [visual identity board](https://www.figma.com/file/ueHI18DFaa58xfa1ceqSSJ/Visual-identity?type=design&node-id=0%3A1&mode=design&t=ErciRZZByM3St0u5-1)
