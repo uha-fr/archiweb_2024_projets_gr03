@@ -8,5 +8,9 @@ final class HomeController extends Controller{
     public function notfound(){
         $this->view("404");
     }
+
+    public function homepage(){
+        $this->view("homepage");
+    }
     
 }
