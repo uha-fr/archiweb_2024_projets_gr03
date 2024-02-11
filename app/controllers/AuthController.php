@@ -57,7 +57,7 @@ class AuthController extends Controller
                 $age = $_POST['age'] ?? '';
                 $poids = $_POST['poids'] ?? '';
                 $taille = $_POST['taille'] ?? '';
-                $profileImg;
+               // $profileImg;
 
                 /***********Image************ */
                 if ($_FILES['profile-image']['error'] != 4 || ($_FILES['profile-image']['size'] != 0 && $_FILES['profile-image']['error'] != 0)) {

@@ -5,6 +5,12 @@ class DashboardController extends Controller
     public $user;
     public $userDetails;
     public $email;
+    
+    public $nutritionist;
+
+    public $nutritionistDetails;
+
+    public $emailNutrisionist;
 
     public function __construct()
     {
@@ -17,7 +23,16 @@ class DashboardController extends Controller
             $this->email = $_SESSION["email"];
             $this->getUserDetails();
         }
+      
+        $this->nutritionist = $this->model('Nutritionist');
 
+        if (!isset($_SESSION['isLogged'])) {
+            header("Location: " . BASE_URL . "auth/login");
+            exit();
+        } elseif (isset($_SESSION['email'])) {
+            $this->emailNutrisionist = $_SESSION["email"];
+            $this->getNutritionistDetails();
+        }
         
     }
 
@@ -35,6 +50,22 @@ class DashboardController extends Controller
 
         
     }
+
+    private function getNutritionistDetails()
+    {
+        $nutritionistInfo = $this->user->getNutritionistInfo($this->emailNutrisionist);
+        $this->nutritionistDetails = $nutritionistInfo[0];
+    }
+
+    public function indexNutrisionists()
+    {
+
+        $this->getNutritionistDetails();
+        $this->view("nutrisionists/index", 'Dashboard', ['nutritionistDetails' => $this->nutritionistDetails]);
+
+        
+    }
+
 
     public function updateProfile()
     {
@@ -72,4 +103,36 @@ class DashboardController extends Controller
     public function nutritionnistes(){
         $this->view("users/nutritionnistes", 'Nutritionniste', ['userDetails' => $this->userDetails]);
     }
+
+    public function updateNutritionistProfile()
+    {
+        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+            
+        }
+
+        // Afficher la vue pour la mise à jour du profil du nutritionniste
+    }
+
+    // Méthode pour gérer les plans alimentaires des utilisateurs
+    public function manageMealPlans()
+    {
+        // Récupérer et traiter les plans alimentaires
+        
+        // Afficher la vue pour la gestion des plans alimentaires
+    }
+
+    
+    public function viewNutritionalInformation()
+    {
+        // Récupérer et afficher les informations nutritionnelles
+        
+    }
+
+    
+    public function manageAppointments()
+    {
+        // Gérer les rendez-vous entre nutritionnistes et utilisateurs
+        
+    }
+
 }
