@@ -24,7 +24,7 @@ class DashboardController extends Controller
             $this->getUserDetails();
         }
       
-        $this->nutritionist = $this->model('Nutritionist');
+        /*$this->nutritionist = $this->model('Nutritionist');
 
         if (!isset($_SESSION['isLogged'])) {
             header("Location: " . BASE_URL . "auth/login");
@@ -32,7 +32,7 @@ class DashboardController extends Controller
         } elseif (isset($_SESSION['email'])) {
             $this->emailNutrisionist = $_SESSION["email"];
             $this->getNutritionistDetails();
-        }
+        }*/
         
     }
 
