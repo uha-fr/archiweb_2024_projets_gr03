@@ -7,7 +7,7 @@
             include "components/navbar.php";
         ?>
         <div class="p-4 border-2 border-gray-200 border-dashed rounded-lg dark:border-gray-700">
-            <div class="grid  gap-2 mb-4">
+            <div class="grid gap-2 mb-4">
                 <div>
                     <div class="grid grid-cols-2 gap-2">
                         <div class="h-full w-full p-5 rounded bg-white h-28 dark:bg-[#C6E0B9]">
