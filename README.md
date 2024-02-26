@@ -44,12 +44,13 @@ Pour le sprint 1:
 | --- | --- | --- | --- |
 | Haute | Configuration de l'Environnement de Développement | Mettre en place les serveurs et environnements de développement. | Toute l'équipe |
 | Haute | Conception de la Base de Données | Définir les schémas pour les utilisateurs, recettes, repas. | Badr/Ahcene |
-| Haute | Mise en Place du Framework Front-End (Tailwind) | Intégrer Tailwind et créer un template de base. | Sonia/Ayah |
+| Haute | Design de l'interface et identité visuelle | Maquette de l'interface | Ayah/Sonia |
+| Haute | Mise en Place du Framework Front-End (Tailwind) | Intégrer Tailwind et créer un template de base. | Badr |
 | Haute | Page d'Accueil et Navigation | Développer une page d'accueil et système de navigation. | Sonia |
 | Moyenne | Fonctionnalité d'Inscription des Utilisateurs | Implementer la logique inscription et connexion et validation côté serveur. | Badr |
-| Moyenne | Fonctionnalité de Connexion des Utilisateurs | Créer les formulaires de connexion et inscription. | Sonia  |
+| Moyenne | Fonctionnalité de Connexion des Utilisateurs | Créer les formulaires de connexion et inscription. | Badr  |
 | Moyenne | Conception d'une Interface pour la Gestion des Profils | Créer une interface pour gérer le profil utilisateur. | Ayah |
-| Moyenne | Conception d'une Interface pour la Gestion des Profils | Créer une interface pour gérer le profil nutrisionite. | Sonia |
+| Moyenne | Conception d'une Interface pour la Gestion des Profils | Créer une interface pour gérer le profil nutritionniste. | Sonia |
 | Moyenne | Conception d'une Interface pour la Gestion des Profils | Créer une interface pour gérer le profil admin. | Ahcene |
 | Basse | Test et Validation | Tester les fonctionnalités et assurer la sécurité des formulaires. | Sonia |
 | Basse | Documentation | Documenter les choix techniques et configurations. | Ahcene |
