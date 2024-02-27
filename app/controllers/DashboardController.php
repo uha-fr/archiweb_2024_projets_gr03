@@ -24,6 +24,17 @@ class DashboardController extends Controller
             $this->email = $_SESSION["email"];
             $this->getUserDetails();
         }
+      
+        /*$this->nutritionist = $this->model('Nutritionist');
+
+        if (!isset($_SESSION['isLogged'])) {
+            header("Location: " . BASE_URL . "auth/login");
+            exit();
+        } elseif (isset($_SESSION['email'])) {
+            $this->emailNutrisionist = $_SESSION["email"];
+            $this->getNutritionistDetails();
+        }*/
+        
     }
 
     private function getUserDetails()

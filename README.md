@@ -40,18 +40,21 @@ Aprés l'installation et la configuration vous pouvez accéder à l'application 
 ## Documentation
 ### Backlog
 Pour le sprint 1:
-| Priorité | Tâche                                                  | Description                                                          |Assignée à |
-| Haute    | Configuration de l'Environnement de Développement      | Mettre en place les serveurs et environnements de développement.     | Toute l'équipe |
-| Haute    | Conception de la Base de Données                       | Définir les schémas pour les utilisateurs, recettes, repas.          | Badr/Ahcene |
-| Haute    | Mise en Place du Framework Front-End (Tailwind)        | Intégrer Tailwind et créer un template de base.                      |Sonia/Ayah  |
-| Haute    | Page d'Accueil et Navigation                           | Développer une page d'accueil et système de navigation.              | Sonia |
-| Moyenne  | Fonctionnalité d'Inscription des Utilisateurs          | Implementer la logique inscription et connexion et validation côté serveur.  |Badr  |
-| Moyenne  | Fonctionnalité de Connexion des Utilisateurs           | Créer les formulaires de connexion et inscription.                   |Sonia  |
-| Moyenne  | Conception d'une Interface pour la Gestion des Profils | Créer une interface pour gérer le profil utilisateur.                | Ayah |
-| Moyenne  | Conception d'une Interface pour la Gestion des Profils | Créer une interface pour gérer le profil nutrisionite.               | Sonia|
-| Moyenne  | Conception d'une Interface pour la Gestion des Profils | Créer une interface pour gérer le profil admin.                      | Ahcene |
-| Basse    | Test et Validation                                     | Tester les fonctionnalités et assurer la sécurité des formulaires.   | Sonia |
-| Basse    | Documentation                                          | Documenter les choix techniques et configurations.                   | Ahcene |
+| Priorité | Tâche | Description | Assignée à |                                             
+| --- | --- | --- | --- |
+| Haute | Configuration de l'Environnement de Développement | Mettre en place les serveurs et environnements de développement. | Toute l'équipe |
+| Haute | Conception de la Base de Données | Définir les schémas pour les utilisateurs, recettes, repas. | Badr/Ahcene |
+| Haute | Design de l'interface et identité visuelle | Maquette de l'interface | Ayah/Sonia |
+| Haute | Mise en Place du Framework Front-End (Tailwind) | Intégrer Tailwind et créer un template de base. | Badr |
+| Haute | Page d'Accueil et Navigation | Développer une page d'accueil et système de navigation. | Sonia |
+| Moyenne | Fonctionnalité d'Inscription des Utilisateurs | Implementer la logique inscription et connexion et validation côté serveur. | Badr |
+| Moyenne | Fonctionnalité de Connexion des Utilisateurs | Créer les formulaires de connexion et inscription. | Badr  |
+| Moyenne | Conception d'une Interface pour la Gestion des Profils | Créer une interface pour gérer le profil utilisateur. | Ayah |
+| Moyenne | Conception d'une Interface pour la Gestion des Profils | Créer une interface pour gérer le profil nutritionniste. | Sonia |
+| Moyenne | Conception d'une Interface pour la Gestion des Profils | Créer une interface pour gérer le profil admin. | Ahcene |
+| Basse | Test et Validation | Tester les fonctionnalités et assurer la sécurité des formulaires. | Sonia |
+| Basse | Documentation | Documenter les choix techniques et configurations. | Ahcene |
+
 ### Schéma actuelle de la base de données
 ### Identité visuelle
 lien vers le figma : [visual identity board](https://www.figma.com/file/ueHI18DFaa58xfa1ceqSSJ/Visual-identity?type=design&node-id=0%3A1&mode=design&t=ErciRZZByM3St0u5-1)

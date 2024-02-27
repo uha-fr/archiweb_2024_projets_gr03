@@ -20,7 +20,7 @@
                 <a href="#" class="mr-5 hover:text-gray-900">Comment ça marche ?</a>
                 <a href="#" class="mr-5 hover:text-gray-900">Repas</a>
                 <a href="#" class="mr-5 hover:text-gray-900">Temoignages</a>
-                <a href="#" class="inline-block text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg">Connexion</a>
+                <a href="<?php echo BASE_URL . "dashboard" ?>" class="inline-block text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg">Connexion</a>
             </nav>
         </div>
     </header>
