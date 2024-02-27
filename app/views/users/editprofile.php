@@ -3,6 +3,7 @@
 <body class="relative">
     <?php
         include "components/sidebar.php";
+
     ?>
 
 

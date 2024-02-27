@@ -6,11 +6,12 @@ class DashboardController extends Controller
     public $userDetails;
     public $email;
     
+    /****************** */
     public $nutritionist;
-
     public $nutritionistDetails;
-
     public $emailNutrisionist;
+    /****************** */
+
 
     public function __construct()
     {
@@ -23,17 +24,6 @@ class DashboardController extends Controller
             $this->email = $_SESSION["email"];
             $this->getUserDetails();
         }
-      
-        $this->nutritionist = $this->model('Nutritionist');
-
-        if (!isset($_SESSION['isLogged'])) {
-            header("Location: " . BASE_URL . "auth/login");
-            exit();
-        } elseif (isset($_SESSION['email'])) {
-            $this->emailNutrisionist = $_SESSION["email"];
-            $this->getNutritionistDetails();
-        }
-        
     }
 
     private function getUserDetails()
@@ -51,20 +41,15 @@ class DashboardController extends Controller
         
     }
 
-    private function getNutritionistDetails()
-    {
-        $nutritionistInfo = $this->user->getNutritionistInfo($this->emailNutrisionist);
-        $this->nutritionistDetails = $nutritionistInfo[0];
+    public function product(){
+    
+        $this->view("infos/product",'this is product');
     }
 
-    public function indexNutrisionists()
-    {
-
-        $this->getNutritionistDetails();
-        $this->view("nutrisionists/index", 'Dashboard', ['nutritionistDetails' => $this->nutritionistDetails]);
-
-        
+    public function recipe(){
+        $this->view("users/recipe",'this is recipe', ['userDetails' => $this->userDetails]);
     }
+    
 
 
     public function updateProfile()
@@ -100,8 +85,24 @@ class DashboardController extends Controller
         $this->view("users/recipes", 'Recette', ['userDetails' => $this->userDetails]);
     }
 
+
+    /********************Nutriti**************** */
     public function nutritionnistes(){
         $this->view("users/nutritionnistes", 'Nutritionniste', ['userDetails' => $this->userDetails]);
+    }
+
+    private function getNutritionistDetails()
+    {
+        $nutritionistInfo = $this->user->getNutritionistInfo($this->emailNutrisionist);
+        $this->nutritionistDetails = $nutritionistInfo[0];
+    }
+
+    public function indexNutrisionists()
+    {
+
+        $this->getNutritionistDetails();
+        $this->view("nutrisionists/index", 'Dashboard', ['nutritionistDetails' => $this->nutritionistDetails]);
+    
     }
 
     public function updateNutritionistProfile()
