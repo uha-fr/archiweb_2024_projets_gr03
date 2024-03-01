@@ -19,7 +19,7 @@
           <path d="M4 19l16 0"></path>
           <path d="M4 15l4 -6l4 2l4 -5l4 4"></path>
         </svg>
-        <h3 class="font-medium text-lg">Suivi nutritionnelle</h3>
+        <h3 class="font-medium text-lg">Daily nutritional tracking</h3>
         <svg
           xmlns="http://www.w3.org/2000/svg"
           class="ml-2 shrink-0 w-6 h-6 text-gray-500"

@@ -10,15 +10,14 @@
             <div class="grid gap-2 mb-4">
                 <div>
                     <div class="grid grid-cols-2 gap-2">
-                        <div class="h-full w-full p-5 rounded bg-white h-28 dark:bg-[#C6E0B9]">
-                            <p class="mb-3 text-l font-bold"> Calendrier </p>
+                    <div class="h-full p-5 mt-11 rounded bg-white h-28 dark:bg-[#C6E0B9]">
                             <?php
-                                include "components/calendar.php";
-                            ?>   
+                         include "components/cardMealPlan.php";
+                        ?>   
                         </div>
                         <div class="h-full p-5 mt-11 rounded bg-white h-28 dark:bg-[#C6E0B9]">
                             <?php
-                         include "components/suivi.php";
+                         include "components/cardTracker.php";
                         ?>   
                         </div>
                     </div>

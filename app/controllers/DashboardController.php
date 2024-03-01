@@ -96,10 +96,18 @@ class DashboardController extends Controller
         $this->view("users/recipes", 'Recette', ['userDetails' => $this->userDetails]);
     }
 
+    public function tracker(){
+        $this->view("users/tracker", 'Tracker', ['userDetails' => $this->userDetails]);
+    }
+
+    public function Mealplan(){
+        $this->view("users/mealPlan", 'Meal plan', ['userDetails' => $this->userDetails]);
+    }
+
 
     /********************Nutriti**************** */
-    public function nutritionnistes(){
-        $this->view("users/nutritionnistes", 'Nutritionniste', ['userDetails' => $this->userDetails]);
+    public function nutritionnists(){
+        $this->view("users/nutritionnists", 'Nutritionniste', ['userDetails' => $this->userDetails]);
     }
 
     private function getNutritionistDetails()
