@@ -24,7 +24,7 @@
                 </div>
 
                 <div class="h-full p-5 rounded bg-white h-28 dark:bg-gray-100">
-                    <p class="mb-3 text-l font-bold"> Recette favoris</p>
+                    <h2 class="text-2xl font-semibold px-3 mt-5 mb-3">Favorite recipes</h2>
                     <div class="p-3 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3 gap-5">
                         <?php
                         $recipes = [
