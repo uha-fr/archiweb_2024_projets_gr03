@@ -27,7 +27,7 @@ SET time_zone = "+00:00";
 -- Structure de la table `ingredient`
 --
 
-DROP TABLE IF EXISTS `ingredient`;
+
 CREATE TABLE IF NOT EXISTS `ingredient` (
   `id_ingredient` int NOT NULL,
   `name` varchar(255) DEFAULT NULL,
@@ -40,7 +40,7 @@ CREATE TABLE IF NOT EXISTS `ingredient` (
 -- Structure de la table `ingredientcategory`
 --
 
-DROP TABLE IF EXISTS `ingredientcategory`;
+
 CREATE TABLE IF NOT EXISTS `ingredientcategory` (
   `id_category` int NOT NULL,
   `name` varchar(255) DEFAULT NULL,
@@ -53,7 +53,7 @@ CREATE TABLE IF NOT EXISTS `ingredientcategory` (
 -- Structure de la table `ingredientimage`
 --
 
-DROP TABLE IF EXISTS `ingredientimage`;
+
 CREATE TABLE IF NOT EXISTS `ingredientimage` (
   `id_image` int NOT NULL,
   `id_ingredient` int DEFAULT NULL,
@@ -68,7 +68,7 @@ CREATE TABLE IF NOT EXISTS `ingredientimage` (
 -- Structure de la table `ingredientrecipe`
 --
 
-DROP TABLE IF EXISTS `ingredientrecipe`;
+
 CREATE TABLE IF NOT EXISTS `ingredientrecipe` (
   `id_aliment_recipe` int NOT NULL,
   `id_measure` int DEFAULT NULL,
@@ -87,7 +87,6 @@ CREATE TABLE IF NOT EXISTS `ingredientrecipe` (
 -- Structure de la table `measure`
 --
 
-DROP TABLE IF EXISTS `measure`;
 CREATE TABLE IF NOT EXISTS `measure` (
   `id_measure` int NOT NULL,
   `name` varchar(255) DEFAULT NULL,
@@ -100,7 +99,7 @@ CREATE TABLE IF NOT EXISTS `measure` (
 -- Structure de la table `nutrition`
 --
 
-DROP TABLE IF EXISTS `nutrition`;
+
 CREATE TABLE IF NOT EXISTS `nutrition` (
   `id_nutrition` int NOT NULL,
   `name` varchar(255) DEFAULT NULL,
@@ -112,8 +111,6 @@ CREATE TABLE IF NOT EXISTS `nutrition` (
 --
 -- Structure de la table `nutritionalgoals`
 --
-
-DROP TABLE IF EXISTS `nutritionalgoals`;
 CREATE TABLE IF NOT EXISTS `nutritionalgoals` (
   `id_goal` int NOT NULL,
   `id_user` int DEFAULT NULL,
@@ -133,7 +130,6 @@ CREATE TABLE IF NOT EXISTS `nutritionalgoals` (
 -- Structure de la table `nutritioningredient`
 --
 
-DROP TABLE IF EXISTS `nutritioningredient`;
 CREATE TABLE IF NOT EXISTS `nutritioningredient` (
   `id_nutrition` int NOT NULL,
   `id_ingredient` int NOT NULL,
@@ -147,7 +143,6 @@ CREATE TABLE IF NOT EXISTS `nutritioningredient` (
 -- Structure de la table `nutritiontracking`
 --
 
-DROP TABLE IF EXISTS `nutritiontracking`;
 CREATE TABLE IF NOT EXISTS `nutritiontracking` (
   `id_tracker` int NOT NULL,
   `id_user` int DEFAULT NULL,
@@ -166,8 +161,6 @@ CREATE TABLE IF NOT EXISTS `nutritiontracking` (
 --
 -- Structure de la table `recipe`
 --
-
-DROP TABLE IF EXISTS `recipe`;
 CREATE TABLE IF NOT EXISTS `recipe` (
   `id_recipe` int NOT NULL,
   `name` varchar(255) DEFAULT NULL,
@@ -184,8 +177,6 @@ CREATE TABLE IF NOT EXISTS `recipe` (
 --
 -- Structure de la table `recipefavorite`
 --
-
-DROP TABLE IF EXISTS `recipefavorite`;
 CREATE TABLE IF NOT EXISTS `recipefavorite` (
   `id_user` int NOT NULL,
   `id_recipe` int NOT NULL,
@@ -199,7 +190,6 @@ CREATE TABLE IF NOT EXISTS `recipefavorite` (
 -- Structure de la table `reset_password`
 --
 
-DROP TABLE IF EXISTS `reset_password`;
 CREATE TABLE IF NOT EXISTS `reset_password` (
   `id` int NOT NULL,
   `user_email` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
@@ -212,8 +202,6 @@ CREATE TABLE IF NOT EXISTS `reset_password` (
 --
 -- Structure de la table `step`
 --
-
-DROP TABLE IF EXISTS `step`;
 CREATE TABLE IF NOT EXISTS `step` (
   `id_step` int NOT NULL,
   `id_recipe` int DEFAULT NULL,
@@ -228,9 +216,6 @@ CREATE TABLE IF NOT EXISTS `step` (
 
 --
 -- Structure de la table `users`
---
-
-DROP TABLE IF EXISTS `users`;
 CREATE TABLE IF NOT EXISTS `users` (
   `id_user` int NOT NULL AUTO_INCREMENT,
   `username` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
