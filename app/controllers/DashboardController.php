@@ -97,7 +97,7 @@ class DashboardController extends Controller
     }
 
     public function tracker(){
-        $this->view("users/tracker", 'Tracker', ['userDetails' => $this->userDetails]);
+        $this->view("users/tracker", 'Nutritionnal tracker', ['userDetails' => $this->userDetails]);
     }
 
     public function Mealplan(){

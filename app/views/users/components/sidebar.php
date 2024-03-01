@@ -40,7 +40,7 @@ $userDetails = $data['userDetails'];
         <li>
           <a href="<?php echo BASE_URL."dashboard/tracker" ?>" class="text-white text-sm flex items-center hover:bg-[#755f5a] rounded px-4 py-2 transition-all">
             <i class="fa-light fa-star mr-4 text-base"></i>
-            <span>Tracker</span>
+            <span>Nutrional tracker</span>
           </a>
         </li>
         <li>

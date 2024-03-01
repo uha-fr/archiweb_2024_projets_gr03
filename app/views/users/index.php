@@ -10,12 +10,12 @@
             <div class="grid gap-2 mb-4">
                 <div>
                     <div class="grid grid-cols-2 gap-2">
-                        <div class="h-full p-5 rounded bg-white h-28 dark:bg-[#C6E0B9]">
+                        <div class="h-full p-5 rounded bg-white h-28 dark:bg-gray-100">
                                 <?php
                             include "components/cardMealPlan.php";
                             ?>   
                         </div>
-                        <div class="h-full p-5 rounded bg-white h-28 dark:bg-[#C6E0B9]">
+                        <div class="h-full p-5 rounded bg-white h-28 dark:bg-gray-100">
                                 <?php
                             include "components/cardTracker.php";
                             ?>   
@@ -23,7 +23,7 @@
                     </div>
                 </div>
 
-                <div class="h-full p-5 rounded bg-white h-28 dark:bg-[#C6E0B9]">
+                <div class="h-full p-5 rounded bg-white h-28 dark:bg-gray-100">
                     <p class="mb-3 text-l font-bold"> Recette favoris</p>
                     <div class="p-3 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3 gap-5">
                         <?php
