@@ -5,6 +5,8 @@ class DashboardController extends Controller
     public $user;
     public $userDetails;
     public $email;
+    public $nutrition;
+    public $nutritionDetails;
     
     /****************** */
     public $nutritionist;
@@ -17,12 +19,15 @@ class DashboardController extends Controller
     {
         $this->user = $this->model('User');
 
+        $this->nutrition = $this->model('Nutrition');
+
         if (!isset($_SESSION['isLogged'])) {
             header("Location: " . BASE_URL . "auth/login");
             exit();
         } elseif (isset($_SESSION['email'])) {
             $this->email = $_SESSION["email"];
             $this->getUserDetails();
+            $this->getNutritionDetails();
         }
       
         /*$this->nutritionist = $this->model('Nutritionist');
@@ -97,8 +102,8 @@ class DashboardController extends Controller
     }
 
     public function tracker(){
-        $bmi = $this->user->getBMI($this->userDetails['taille'], $this->userDetails['poids'], $this->userDetails['age']);
-        $this->view("users/tracker", 'Nutritionnal tracker', ['userDetails' => $this->userDetails, 'bmi' => $bmi]);
+        $bmi = $this->nutrition->getBMI($this->userDetails['taille'], $this->userDetails['poids'], $this->userDetails['age']);
+        $this->view("users/tracker", 'Nutritional tracker', ['userDetails' => $this->userDetails, 'bmi' => $bmi, 'nutritionDetails' => $this->nutritionDetails]);
     }
 
     public function Mealplan(){
@@ -106,7 +111,7 @@ class DashboardController extends Controller
     }
 
 
-    /********************Nutriti**************** */
+    /********************Nutritionists**************** */
     public function nutritionnists(){
         $this->view("users/nutritionnists", 'Nutritionniste', ['userDetails' => $this->userDetails]);
     }
@@ -156,10 +161,10 @@ class DashboardController extends Controller
         
     }
 
-    public function viewNutritionalGoals()
+    /************************Nutrition****************** */
+    private function getNutritionDetails()
     {
-        // Récupérer et afficher les informations des objectifs nutritionnelles
-        
+        $info = $this->nutrition->getUserNutritionalGoals($this->email);
+        $this->nutritionDetails = $info;
     }
-
 }

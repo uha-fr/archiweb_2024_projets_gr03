@@ -8,27 +8,27 @@
     <div class="flex flex-col items-center mb-4">
         <div class="mb-2">
             <label class="text-sm text-gray-500">Calories:</label>
-            <span class="font-semibold">175</span>
+            <span class="font-semibold"><?php echo $nutritionDetails['calories_goal'];?></span>
         </div>
 
         <div class="mb-2">
             <label class="text-sm text-gray-500">Proteins:</label>
-            <span class="font-semibold">70</span>
+            <span class="font-semibold"><?php echo $nutritionDetails['proteins_goal'];?></span>
         </div>
 
         <div class="mb-2">
             <label class="text-sm text-gray-500">Lipids:</label>
-            <span class="font-semibold">25</span>
+            <span class="font-semibold"><?php echo $nutritionDetails['lipids_goal'];?></span>
         </div>
 
          <div class="mb-2">
             <label class="text-sm text-gray-500">Carbohydrates:</label>
-            <span class="font-semibold">25</span>
+            <span class="font-semibold"><?php echo $nutritionDetails['carbohydrates_goal'];?></span>
         </div>
 
          <div>
             <label class="text-sm text-gray-500">Fiber:</label>
-            <span class="font-semibold">25</span>
+            <span class="font-semibold"><?php echo $nutritionDetails['fiber_goal'];?></span>
         </div>
     </div>
 </section>
