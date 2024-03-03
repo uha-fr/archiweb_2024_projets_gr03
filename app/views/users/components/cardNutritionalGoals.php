@@ -1,7 +1,7 @@
 <section class="w-full p-6 rounded-lg max-w-md shadow-lg shadow-gray-300 bg-white">
     <!-- Header -->
     <header class="mb-4">
-        <h3 class="font-medium text-lg">Nutritionnal goals</h3>
+        <h3 class="font-medium text-lg">Nutritional goals</h3>
     </header>
 
     <!-- Body -->

@@ -7,7 +7,7 @@
             <h2 class="text-2xl font-semibold px-3 mt-5 mb-3">Nutritional tracker</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 px-3">  
                 <div class="p-4 rounded-md">
-                    <?php include "components/cardIMC.php"; ?>
+                    <?php include "components/cardBMI.php"; ?>
                 </div>
                 <div class="p-4 rounded-md">
                     <?php include "components/cardNutritionalGoals.php"; ?>

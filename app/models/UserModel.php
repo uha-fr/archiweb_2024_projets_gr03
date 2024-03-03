@@ -137,4 +137,23 @@ class UserModel extends Model
         mail($email, $subject, $message);
     }
 
+    public function getUserBioInfo($email){
+        $query = "SELECT age, poids, sexe, taille FROM users WHERE email=?";
+        $stmt = $this->db->prepare($query);
+        $stmt->bindParam(1, $email);
+
+        if ($stmt->execute()) {
+            return $stmt->fetch(PDO::FETCH_ASSOC);
+        } else {
+            die("Error: " . implode(", ", $stmt->errorInfo()));
+        }
+    }
+
+    public function getBMI($height, $weight, $age){
+            $heightMeters = $height / 100;
+            $bmi = $weight/ ($heightMeters ** 2);
+            $bmi = round($bmi, 1);
+            return $bmi;
+    }
+
 }

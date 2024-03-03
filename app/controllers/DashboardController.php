@@ -97,7 +97,8 @@ class DashboardController extends Controller
     }
 
     public function tracker(){
-        $this->view("users/tracker", 'Nutritionnal tracker', ['userDetails' => $this->userDetails]);
+        $bmi = $this->user->getBMI($this->userDetails['taille'], $this->userDetails['poids'], $this->userDetails['age']);
+        $this->view("users/tracker", 'Nutritionnal tracker', ['userDetails' => $this->userDetails, 'bmi' => $bmi]);
     }
 
     public function Mealplan(){
@@ -152,6 +153,12 @@ class DashboardController extends Controller
     public function manageAppointments()
     {
         // Gérer les rendez-vous entre nutritionnistes et utilisateurs
+        
+    }
+
+    public function viewNutritionalGoals()
+    {
+        // Récupérer et afficher les informations des objectifs nutritionnelles
         
     }
 
