@@ -236,3 +236,13 @@ COMMIT;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
+
+-- Ajout de l'auto-incrémentation à id_goal
+ALTER TABLE nutritionalgoals
+MODIFY COLUMN id_goal INT AUTO_INCREMENT;
+
+-- Mise à jour de la valeur date_modif avec le timestamp actuel lors de l'insertion
+ALTER TABLE nutritionalgoals
+MODIFY COLUMN date_modif TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP;
+
