@@ -28,24 +28,8 @@
               <h4
                 class="font-medium text-sm mr-auto text-gray-700 flex items-center"
               >
-                Calories
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="ml-2 shrink-0 w-5 h-5 text-gray-500"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  stroke-width="2"
-                  stroke="currentColor"
-                  fill="none"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                >
-                  <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                  <path d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0"></path>
-                  <path d="M12 9h.01"></path>
-                  <path d="M11 12h1v4h1"></path>
-                </svg>
+                Calories :&nbsp; 
+                <span class="font-semibold"><?php echo $nutritionTracked['calories_tracked'];?></span>
               </h4>
               <span class="px-2 py-1 rounded-lg bg-red-50 text-red-500 text-xs">
                 6.2 / 10
@@ -65,24 +49,8 @@
               <h4
                 class="font-medium text-sm mr-auto text-gray-700 flex items-center"
               >
-                Proteins
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="ml-2 shrink-0 w-5 h-5 text-gray-500"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  stroke-width="2"
-                  stroke="currentColor"
-                  fill="none"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                >
-                  <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                  <path d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0"></path>
-                  <path d="M12 9h.01"></path>
-                  <path d="M11 12h1v4h1"></path>
-                </svg>
+                Proteins :&nbsp; 
+                <span class="font-semibold"><?php echo $nutritionTracked['proteins_tracked'];?></span>
               </h4>
               <span class="px-2 py-1 rounded-lg bg-red-50 text-red-500 text-xs">
                 6.8 / 10
@@ -102,24 +70,8 @@
               <h4
                 class="font-medium text-sm mr-auto text-gray-700 flex items-center"
               >
-                Lipids
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="ml-2 shrink-0 w-5 h-5 text-gray-500"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  stroke-width="2"
-                  stroke="currentColor"
-                  fill="none"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                >
-                  <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                  <path d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0"></path>
-                  <path d="M12 9h.01"></path>
-                  <path d="M11 12h1v4h1"></path>
-                </svg>
+                Lipids :&nbsp; 
+                <span class="font-semibold"><?php echo $nutritionTracked['lipids_tracked'];?></span>
               </h4>
               <span
                 class="px-2 py-1 rounded-lg bg-green-50 text-green-700 text-xs"
@@ -141,24 +93,8 @@
               <h4
                 class="font-medium text-sm mr-auto text-gray-700 flex items-center"
               >
-                Carbohydrates
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="ml-2 shrink-0 w-5 h-5 text-gray-500"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  stroke-width="2"
-                  stroke="currentColor"
-                  fill="none"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                >
-                  <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                  <path d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0"></path>
-                  <path d="M12 9h.01"></path>
-                  <path d="M11 12h1v4h1"></path>
-                </svg>
+                Carbohydrates :&nbsp; 
+                <span class="font-semibold"><?php echo $nutritionTracked['carbohydrates_tracked'];?></span>
               </h4>
               <span class="px-2 py-1 rounded-lg bg-red-50 text-red-500 text-xs">
                 6.4 / 10
@@ -178,24 +114,8 @@
               <h4
                 class="font-medium text-sm mr-auto text-gray-700 flex items-center"
               >
-                Fiber
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="ml-2 shrink-0 w-5 h-5 text-gray-500"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  stroke-width="2"
-                  stroke="currentColor"
-                  fill="none"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                >
-                  <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                  <path d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0"></path>
-                  <path d="M12 9h.01"></path>
-                  <path d="M11 12h1v4h1"></path>
-                </svg>
+                Fiber :&nbsp; 
+                <span class="font-semibold"><?php echo $nutritionTracked['fiber_tracked'];?></span>
               </h4>
               <span
                 class="px-2 py-1 rounded-lg bg-green-50 text-green-700 text-xs"
