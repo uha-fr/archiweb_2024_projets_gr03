@@ -20,33 +20,33 @@ $userDetails = $data['userDetails'];
       <li>
           <a href="<?php echo BASE_URL."dashboard" ?>" class="text-white text-sm flex items-center hover:bg-[#755f5a] rounded px-4 py-2 transition-all">
             <i class="fa-light fa-house mr-4 text-base"></i>
-            <span>Accueil</span>
+            <span>Home</span>
           </a>
         </li>
           <a href="<?php echo BASE_URL."dashboard/recipes" ?>" class="text-white text-sm flex items-center hover:bg-[#755f5a] rounded px-4 py-2 transition-all">
             <i class="fa-light fa-pot-food  mr-4 text-base"></i>
-            <span>Recettes</span>
+            <span>Recipes</span>
           </a>
         </li>
         
         <li>
-          <a href="<?php echo BASE_URL."dashboard/nutritionnistes" ?>" class="text-white text-sm flex items-center hover:bg-[#755f5a] rounded px-4 py-2 transition-all">
+          <a href="<?php echo BASE_URL."dashboard/nutritionnists" ?>" class="text-white text-sm flex items-center hover:bg-[#755f5a] rounded px-4 py-2 transition-all">
             <i class="fa-light fa-user-chef  mr-4 text-base"></i>
-            <span>Nutritionnistes</span>
+            <span>Nutritionnists</span>
           </a>
         </li>
         
         
         <li>
-          <a href="javascript:void(0)" class="text-white text-sm flex items-center hover:bg-[#755f5a] rounded px-4 py-2 transition-all">
+          <a href="<?php echo BASE_URL."dashboard/tracker" ?>" class="text-white text-sm flex items-center hover:bg-[#755f5a] rounded px-4 py-2 transition-all">
             <i class="fa-light fa-star mr-4 text-base"></i>
-            <span>Favoris</span>
+            <span>Nutrional tracker</span>
           </a>
         </li>
         <li>
-          <a href="javascript:void(0)" class="text-white text-sm flex items-center hover:bg-[#755f5a] rounded px-4 py-2 transition-all">
+          <a href="<?php echo BASE_URL."dashboard/mealPlan" ?>" class="text-white text-sm flex items-center hover:bg-[#755f5a] rounded px-4 py-2 transition-all">
             <i class="fa-light fa-calendar mr-4 text-base"></i>
-            <span>Plan</span>
+            <span>Meal plan</span>
           </a>
         </li>
         
@@ -63,7 +63,7 @@ $userDetails = $data['userDetails'];
       <a href="<?php echo BASE_URL."dashboard/logout" ?>" class="text-white text-sm flex items-center hover:bg-[#755f5a] rounded px-4 py-3 transition-all my-20">
 
         <i class="fa-light fa-right-from-bracket mr-3 text-lg"></i>
-            <span>Se déconnecter</span>
+            <span>Log out</span>
       </a>
     </nav>
 

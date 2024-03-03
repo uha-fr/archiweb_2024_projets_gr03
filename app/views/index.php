@@ -9,18 +9,18 @@
     <script type="module" src="https://unpkg.com/ionicons@5.4.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule="" src="https://unpkg.com/ionicons@5.4.0/dist/ionicons/ionicons.js"></script>
 </head>
-<body class="antialiased bg-gray-100">
+<body class="antialiased">
     <header class="text-gray-600 body-font shadow w-full">
         <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
             <a href="#" class="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
-                <img src="public/assets/img/logo.png" alt="logo" class="w-10 h-10 text-white p-2 bg-indigo-500 rounded-full">
+                <img src="<?php echo IMG_LOAD . '/logo.png' ?>" alt="logo" class="w-16 h-16 text-white p-2 rounded-full">
                 <span class="ml-3 text-xl">Manger</span>
             </a>
             <nav class="md:ml-auto flex flex-wrap items-center text-base justify-center">
-                <a href="#" class="mr-5 hover:text-gray-900">Comment ça marche ?</a>
-                <a href="#" class="mr-5 hover:text-gray-900">Repas</a>
-                <a href="#" class="mr-5 hover:text-gray-900">Temoignages</a>
-                <a href="<?php echo BASE_URL . "dashboard" ?>" class="inline-block text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg">Connexion</a>
+                <a href="#tutorial" class="mr-5 hover:text-gray-900">How does it work ?</a>
+                <a href="#meals" class="mr-5 hover:text-gray-900">Meals</a>
+                <a href="#testimonials" class="mr-5 hover:text-gray-900">Testimonials</a>
+                <a href="<?php echo BASE_URL . "dashboard" ?>" class="inline-block text-white bg-[#93BE76] border-0 py-2 px-6 focus:outline-none hover:bg-[#C6E0B9] rounded text-lg">Connexion</a>
             </nav>
         </div>
     </header>
@@ -34,17 +34,17 @@
         The smart 365-days-per-year food subscription that will make you eat healthy again. Tailored to your personal tastes and nutritional needs.
       </p>
       <div class="flex justify-center">
-        <a href="#" class="inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg">Start Eating Well</a>
+        <a href="#" class="inline-flex text-white bg-[#93BE76] border-0 py-2 px-6 focus:outline-none hover:bg-[#C6E0B9] rounded text-lg">Start Eating Well</a>
         <a href="#" class="ml-4 inline-flex text-gray-700 bg-gray-100 border-0 py-2 px-6 focus:outline-none hover:bg-gray-200 rounded text-lg">Learn More &darr;</a>
       </div>
     </div>
     <div class="lg:max-w-lg lg:w-full md:w-1/2 w-5/6">
-      <img class="object-none h-48 w-96 " alt="hero" src="">
+      <img class="object-none h-48 w-96 " alt="hero" src="<?php echo IMG_LOAD . '/hero.png' ?>">
     </div>
   </div>
 </section>
 
-<section class="bg-gray-100 py-12">
+<section id="tutorial" class="bg-[#C6E0B9] py-12">
   <div class="container mx-auto px-6 text-center">
     <h2 class="text-3xl font-semibold text-gray-800 mb-6">Your daily dose of health in 3 simple steps</h2>
     <div class="flex flex-col md:flex-row justify-center md:space-x-8 space-y-6 md:space-y-0">
@@ -66,9 +66,9 @@
     </div>
   </div>
 </section>
-<section class="bg-gray-100 text-gray-800 py-12">
+<section id="meals" class="bg-gray-100 text-gray-800 py-12">
     <div class="container mx-auto px-6 text-center">
-        <span class="text-indigo-600 font-semibold text-lg">Meals</span>
+        <span class="text-[#93BE76] font-semibold text-xl">Meals</span>
         <h2 class="text-3xl font-semibold my-4">Choose from 5,000+ recipes</h2>
     </div>
     <div class="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-6 px-6 my-8">
@@ -129,18 +129,18 @@
     </div>
     
     <div class="container mx-auto text-center py-4">
-        <a href="#" class="text-indigo-600 font-semibold hover:underline">See all recipes &rarr;</a>
+        <a href="#" class="text-[#93BE76] font-semibold hover:underline">See all recipes &rarr;</a>
     </div>
 </section>
 
-<section class="text-gray-600 body-font">
+<section id="testimonials" class="text-gray-600 body-font">
   <div class="container px-5 py-24 mx-auto">
     <div class="text-center mb-20">
       <h1 class="sm:text-3xl text-2xl font-medium text-center title-font text-gray-900 mb-4">Once you try it, you can't go back</h1>
       <p class="text-base leading-relaxed xl:w-2/4 lg:w-3/4 mx-auto">Testimonials</p>
     </div>
     <div class="flex flex-wrap -m-4">
-      <div class="p-4 md:w-1/2 w-full">
+      <div class="p-4 md:w-1/3 w-full">
         <div class="h-full bg-gray-100 p-8 rounded">
           <img alt="Photo of customer Dave Bryson" class="w-24 h-24 mb-4 rounded-full mx-auto" src="img/customers/dave.jpg">
           <p class="leading-relaxed mb-6">Inexpensive, healthy and great-tasting meals, without even having to order manually! It feels truly magical.</p>
@@ -149,33 +149,23 @@
           </a>
         </div>
       </div>
-      <div class="flex flex-wrap -m-4">
-      <div class="p-4 md:w-1/2 w-full">
+
+      <div class="p-4 md:w-1/3 w-full">
         <div class="h-full bg-gray-100 p-8 rounded">
-          <img alt="Photo of customer Dave Bryson" class="w-24 h-24 mb-4 rounded-full mx-auto" src="img/customers/dave.jpg">
-          <p class="leading-relaxed mb-6">Inexpensive, healthy and great-tasting meals, without even having to order manually! It feels truly magical.</p>
+          <img alt="Photo of customer Jane Doe" class="w-24 h-24 mb-4 rounded-full mx-auto" src="img/customers/jane.jpg">
+          <p class="leading-relaxed mb-6">I love the variety of options and the convenience. It's made my life so much easier!</p>
           <a class="inline-flex items-center">
-            <div class="text-gray-900 font-medium text-lg">Dave Bryson</div>
+            <div class="text-gray-900 font-medium text-lg">Jane Doe</div>
           </a>
         </div>
       </div>
-      <div class="flex flex-wrap -m-4">
-      <div class="p-4 md:w-1/2 w-full">
+
+      <div class="p-4 md:w-1/3 w-full">
         <div class="h-full bg-gray-100 p-8 rounded">
-          <img alt="Photo of customer Dave Bryson" class="w-24 h-24 mb-4 rounded-full mx-auto" src="img/customers/dave.jpg">
-          <p class="leading-relaxed mb-6">Inexpensive, healthy and great-tasting meals, without even having to order manually! It feels truly magical.</p>
+          <img alt="Photo of customer John Smith" class="w-24 h-24 mb-4 rounded-full mx-auto" src="img/customers/john.jpg">
+          <p class="leading-relaxed mb-6">Amazing service! The quality of the meals exceeded my expectations.</p>
           <a class="inline-flex items-center">
-            <div class="text-gray-900 font-medium text-lg">Dave Bryson</div>
-          </a>
-        </div>
-      </div>
-      <div class="flex flex-wrap -m-4">
-      <div class="p-4 md:w-1/2 w-full">
-        <div class="h-full bg-gray-100 p-8 rounded">
-          <img alt="Photo of customer Dave Bryson" class="w-24 h-24 mb-4 rounded-full mx-auto" src="img/customers/dave.jpg">
-          <p class="leading-relaxed mb-6">Inexpensive, healthy and great-tasting meals, without even having to order manually! It feels truly magical.</p>
-          <a class="inline-flex items-center">
-            <div class="text-gray-900 font-medium text-lg">Dave Bryson</div>
+            <div class="text-gray-900 font-medium text-lg">John Smith</div>
           </a>
         </div>
       </div>
@@ -188,7 +178,7 @@
   <div class="container mx-auto px-5 py-8 grid grid-cols-2 md:grid-cols-6 gap-8">
     <div class="col-span-2 md:col-span-1 flex flex-col items-start justify-start">
       <a href="#" class="flex items-center">
-        <img src="public/img/logo.png" alt="mANGER logo" class="logo w-32 mb-4" />
+        <img src="<?php echo IMG_LOAD . '/logo.png' ?>" alt="mANGER logo" class="logo w-32 mb-4" />
       </a>
       <div class="flex mt-4">
         <a href="#" class="text-gray-500 hover:text-gray-900 mr-4">
@@ -226,41 +216,26 @@
       <h2 class="title-font font-semibold text-gray-900 tracking-widest text-sm mb-3">Account</h2>
       <nav class="list-none mb-10">
         <li>
-          <a href="#" class="text-gray-600 hover:text-gray-800">Create account</a>
+          <a href="<?php echo BASE_URL . "dashboard" ?>" class="text-gray-600 hover:text-gray-800">Create account</a>
         </li>
         <li>
-          <a href="#" class="text-gray-600 hover:text-gray-800">Sign in</a>
+          <a href="<?php echo BASE_URL . "dashboard" ?>" class="text-gray-600 hover:text-gray-800">Sign in</a>
         </li>
         
       </nav>
     </div>
 
     <div class="col-span-1 md:col-span-1">
-      <h2 class="title-font font-semibold text-gray-900 tracking-widest text-sm mb-3">Account</h2>
+      <h2 class="title-font font-semibold text-gray-900 tracking-widest text-sm mb-3">About us</h2>
       <nav class="list-none mb-10">
-        <li>
-          <a href="#" class="text-gray-600 hover:text-gray-800">Create account</a>
+        <li class="mb-3">
+          <p>The smart 365-days-per-year food subscription that will make you eat healthy again. Tailored to your personal tastes and nutritional needs. </p>
         </li>
         <li>
-          <a href="#" class="text-gray-600 hover:text-gray-800">Sign in</a>
+          <a href="#" class="text-gray-600 hover:text-gray-800">Learn More</a>
         </li>
-       
       </nav>
-</div>
-
-    <div class="col-span-1 md:col-span-1">
-      <h2 class="title-font font-semibold text-gray-900 tracking-widest text-sm mb-3">Account</h2>
-      <nav class="list-none mb-10">
-        <li>
-          <a href="#" class="text-gray-600 hover:text-gray-800">Create account</a>
-        </li>
-        <li>
-          <a href="#" class="text-gray-600 hover:text-gray-800">Sign in</a>
-        </li>
-        <li>
-        
-      </nav>
-</div>
+    </div>
   </div>
 </footer>
 
