@@ -34,6 +34,20 @@ class NutritionModel extends Model
         }
     }
 
+    public function getUserNutritionsTracked($email){
+        $query = "SELECT * FROM nutritiontracking AS nt
+         INNER JOIN users AS u ON nt.id_user = u.id
+         WHERE u.email=?";
+        $stmt = $this->db->prepare($query);
+        $stmt->bindParam(1, $email);
+
+        if ($stmt->execute()) {
+            return $stmt->fetch(PDO::FETCH_ASSOC);
+        } else {
+            die("Error: " . implode(", ", $stmt->errorInfo()));
+        }
+    }
+
     public function getBMI($height, $weight, $age){
             $heightMeters = $height / 100;
             $bmi = $weight/ ($heightMeters ** 2);

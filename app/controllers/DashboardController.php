@@ -5,13 +5,14 @@ class DashboardController extends Controller
     public $user;
     public $userDetails;
     public $email;
-    public $nutrition;
-    public $nutritionDetails;
-    
     /****************** */
     public $nutritionist;
     public $nutritionistDetails;
     public $emailNutrisionist;
+    /****************** */
+    public $nutrition;
+    public $nutritionGoals;
+    public $nutritionTracked;
     /****************** */
 
 
@@ -27,7 +28,8 @@ class DashboardController extends Controller
         } elseif (isset($_SESSION['email'])) {
             $this->email = $_SESSION["email"];
             $this->getUserDetails();
-            $this->getNutritionDetails();
+            $this->getNutritionGoals();
+            $this->getNutritionTracked();
         }
       
         /*$this->nutritionist = $this->model('Nutritionist');
@@ -50,11 +52,11 @@ class DashboardController extends Controller
 
     public function index()
     {
-
         $this->getUserDetails();
-        $this->view("users/index", 'Dashboard', ['userDetails' => $this->userDetails]);
-
-        
+        $this->view("users/index", 'Dashboard', ['userDetails' => $this->userDetails,
+        'nutritionGoals' => $this->nutritionGoals,
+        'nutritionTracked' => $this->nutritionTracked
+        ]);
     }
 
     public function product(){
@@ -103,7 +105,10 @@ class DashboardController extends Controller
 
     public function tracker(){
         $bmi = $this->nutrition->getBMI($this->userDetails['taille'], $this->userDetails['poids'], $this->userDetails['age']);
-        $this->view("users/tracker", 'Nutritional tracker', ['userDetails' => $this->userDetails, 'bmi' => $bmi, 'nutritionDetails' => $this->nutritionDetails]);
+        $this->view("users/tracker", 'Nutritional tracker', ['userDetails' => $this->userDetails, 'bmi' => $bmi, 
+        'nutritionGoals' => $this->nutritionGoals,
+        'nutritionTracked' => $this->nutritionTracked
+        ]);
     }
 
     public function Mealplan(){
@@ -162,9 +167,15 @@ class DashboardController extends Controller
     }
 
     /************************Nutrition****************** */
-    private function getNutritionDetails()
+    private function getNutritionGoals()
     {
-        $info = $this->nutrition->getUserNutritionalGoals($this->email);
-        $this->nutritionDetails = $info;
+        $goals = $this->nutrition->getUserNutritionalGoals($this->email);
+        $this->nutritionGoals = $goals;
+    }
+
+    private function getNutritionTracked()
+    {
+        $tracked = $this->nutrition->getUserNutritionsTracked($this->email);
+        $this->nutritionTracked = $tracked;
     }
 }

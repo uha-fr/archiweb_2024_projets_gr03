@@ -1,6 +1,7 @@
 
 <?php
-$nutritionDetails = $data['nutritionDetails'];
+$nutritionGoals = $data['nutritionGoals'];
+$nutritionTracked = $data['nutritionTracked'];
 ?>
 
 
