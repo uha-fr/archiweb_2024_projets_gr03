@@ -1,7 +1,7 @@
 <?php
 $nutritionGoals = $data['nutritionGoals'];
 $nutritionTracked = $data['nutritionTracked'];
-
+$nutritionPercentage = $data['nutritionPercentage'];
 ?>
 
 <body class="relative">
@@ -21,11 +21,19 @@ $nutritionTracked = $data['nutritionTracked'];
                             include "components/cardMealPlan.php";
                             ?>   
                         </div>
+                        <?php if (empty($nutritionGoals)): ?>
+                            <div class="h-full p-5 rounded bg-white h-28 dark:bg-gray-100">
+                                <?php
+                            include "components/cardNoGoalsYet.php";
+                            ?>   
+                        </div>
+                <?php else: ?>
                         <div class="h-full p-5 rounded bg-white h-28 dark:bg-gray-100">
                                 <?php
                             include "components/cardTracker.php";
                             ?>   
                         </div>
+                        <?php endif; ?>
                     </div>
                 </div>
 
