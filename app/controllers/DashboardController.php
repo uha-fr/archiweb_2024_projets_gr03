@@ -13,6 +13,7 @@ class DashboardController extends Controller
     public $nutrition;
     public $nutritionGoals;
     public $nutritionTracked;
+    public $nutritionPercentage;
     /****************** */
 
 
@@ -30,6 +31,7 @@ class DashboardController extends Controller
             $this->getUserDetails();
             $this->getNutritionGoals();
             $this->getNutritionTracked();
+            $this->getNutritionPercentage();
         }
       
         /*$this->nutritionist = $this->model('Nutritionist');
@@ -55,7 +57,8 @@ class DashboardController extends Controller
         $this->getUserDetails();
         $this->view("users/index", 'Dashboard', ['userDetails' => $this->userDetails,
         'nutritionGoals' => $this->nutritionGoals,
-        'nutritionTracked' => $this->nutritionTracked
+        'nutritionTracked' => $this->nutritionTracked,
+        'nutritionPercentage' => $this->nutritionPercentage
         ]);
     }
 
@@ -103,17 +106,13 @@ class DashboardController extends Controller
         $this->view("users/recipes", 'Recette', ['userDetails' => $this->userDetails]);
     }
 
-    public function tracker(){
-        $bmi = $this->nutrition->getBMI($this->userDetails['taille'], $this->userDetails['poids'], $this->userDetails['age']);
-        $this->view("users/tracker", 'Nutritional tracker', ['userDetails' => $this->userDetails, 'bmi' => $bmi, 
-        'nutritionGoals' => $this->nutritionGoals,
-        'nutritionTracked' => $this->nutritionTracked
-        ]);
-    }
+   
 
     public function Mealplan(){
         $this->view("users/mealPlan", 'Meal plan', ['userDetails' => $this->userDetails]);
     }
+
+    
 
 
     /********************Nutritionists**************** */
@@ -177,5 +176,41 @@ class DashboardController extends Controller
     {
         $tracked = $this->nutrition->getUserNutritionsTracked($this->email);
         $this->nutritionTracked = $tracked;
+    }
+
+    private function getNutritionPercentage()
+    {
+        $goals = $this->nutrition->getUserNutritionalGoals($this->email);
+        $tracked = $this->nutrition->getUserNutritionsTracked($this->email);
+        $percentage = $this->nutrition->calculatePourcentage($goals, $tracked);
+        $this->nutritionPercentage = $percentage;
+    }
+
+    public function tracker(){
+        $bmi = $this->nutrition->getBMI($this->userDetails['taille'], $this->userDetails['poids'], $this->userDetails['age']);
+        $this->view("users/tracker", 'Nutritional tracker', ['userDetails' => $this->userDetails, 'bmi' => $bmi, 
+        'nutritionGoals' => $this->nutritionGoals,
+        'nutritionTracked' => $this->nutritionTracked,
+        'nutritionPercentage' => $this->nutritionPercentage
+        ]);
+    }
+
+    public function updateGoals(){
+        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+            $caloriesGoal = htmlspecialchars($_POST['calories_goal']);
+            $proteinsGoal = htmlspecialchars($_POST['proteins_goal']);
+            $lipidsGoal = htmlspecialchars($_POST['lipids_goal']);
+            $carbohydratesGoal = htmlspecialchars($_POST['carbohydrates_goal']);
+            $fiberGoal = htmlspecialchars($_POST['fiber_goal']);
+
+            if ($this->nutrition->updateNutritionalGoals($this->email, $caloriesGoal, $proteinsGoal, $lipidsGoal, $carbohydratesGoal, $fiberGoal)) {
+                header('Location: ' . BASE_URL . 'dashboard');
+                exit();
+            } else {
+                die('Error ! Please try again later.');
+            }
+        }
+
+        $this->view("users/updateGoals", 'Update goals', ['userDetails' => $this->userDetails, 'nutritionGoals' => $this->nutritionGoals]);
     }
 }

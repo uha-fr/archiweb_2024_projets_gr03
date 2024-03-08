@@ -29,16 +29,16 @@
                 class="font-medium text-sm mr-auto text-gray-700 flex items-center"
               >
                 Calories :&nbsp; 
-                <span class="font-semibold"><?php echo $nutritionTracked['calories_tracked'];?></span>
+                
               </h4>
               <span class="px-2 py-1 rounded-lg bg-red-50 text-red-500 text-xs">
-                6.2 / 10
+              <?php echo $nutritionTracked['calories_tracked'];?> / <?php echo $nutritionGoals['calories_goal'];?>
               </span>
             </div>
             <div class="overflow-hidden bg-blue-50 h-1.5 rounded-full w-full">
               <span
                 class="h-full bg-[#93BE76] w-full block rounded-full"
-                style="width: 62%"
+                style="width: <?php echo $nutritionPercentage['calories'];?>%"
               ></span>
             </div>
           </div>
@@ -50,16 +50,16 @@
                 class="font-medium text-sm mr-auto text-gray-700 flex items-center"
               >
                 Proteins :&nbsp; 
-                <span class="font-semibold"><?php echo $nutritionTracked['proteins_tracked'];?></span>
+                
               </h4>
               <span class="px-2 py-1 rounded-lg bg-red-50 text-red-500 text-xs">
-                6.8 / 10
+              <?php echo $nutritionTracked['proteins_tracked'];?> / <?php echo $nutritionGoals['proteins_goal'];?>
               </span>
             </div>
             <div class="overflow-hidden bg-blue-50 h-1.5 rounded-full w-full">
               <span
                 class="h-full bg-[#93BE76] w-full block rounded-full"
-                style="width: 68%"
+                style="width: <?php echo $nutritionPercentage['proteins'];?>%"
               ></span>
             </div>
           </div>
@@ -71,18 +71,18 @@
                 class="font-medium text-sm mr-auto text-gray-700 flex items-center"
               >
                 Lipids :&nbsp; 
-                <span class="font-semibold"><?php echo $nutritionTracked['lipids_tracked'];?></span>
+                
               </h4>
               <span
                 class="px-2 py-1 rounded-lg bg-green-50 text-green-700 text-xs"
               >
-                7.3 / 10
+              <?php echo $nutritionTracked['lipids_tracked'];?> / <?php echo $nutritionGoals['lipids_goal'];?>
               </span>
             </div>
             <div class="overflow-hidden bg-blue-50 h-1.5 rounded-full w-full">
               <span
                 class="h-full bg-[#93BE76] w-full block rounded-full"
-                style="width: 73%"
+                style="width: <?php echo $nutritionPercentage['lipids'];?>%"
               ></span>
             </div>
           </div>
@@ -94,16 +94,16 @@
                 class="font-medium text-sm mr-auto text-gray-700 flex items-center"
               >
                 Carbohydrates :&nbsp; 
-                <span class="font-semibold"><?php echo $nutritionTracked['carbohydrates_tracked'];?></span>
+             
               </h4>
               <span class="px-2 py-1 rounded-lg bg-red-50 text-red-500 text-xs">
-                6.4 / 10
+              <?php echo $nutritionTracked['carbohydrates_tracked'];?> / <?php echo $nutritionGoals['carbohydrates_goal'];?>
               </span>
             </div>
             <div class="overflow-hidden bg-blue-50 h-1.5 rounded-full w-full">
               <span
                 class="h-full bg-[#93BE76] w-full block rounded-full"
-                style="width: 64%"
+                style="width: <?php echo $nutritionPercentage['carbohydrates'];?>%"
               ></span>
             </div>
           </div>
@@ -115,18 +115,18 @@
                 class="font-medium text-sm mr-auto text-gray-700 flex items-center"
               >
                 Fiber :&nbsp; 
-                <span class="font-semibold"><?php echo $nutritionTracked['fiber_tracked'];?></span>
+                
               </h4>
               <span
                 class="px-2 py-1 rounded-lg bg-green-50 text-green-700 text-xs"
               >
-                8 / 10
+              <?php echo $nutritionTracked['fiber_tracked'];?> / <?php echo $nutritionGoals['fiber_goal'];?>
               </span>
             </div>
             <div class="overflow-hidden bg-blue-50 h-1.5 rounded-full w-full">
               <span
                 class="h-full bg-[#93BE76] w-full block rounded-full"
-                style="width: 80%"
+                style="width: <?php echo $nutritionPercentage['fiber'];?>%"
               ></span>
             </div>
           </div>
