@@ -213,4 +213,25 @@ class DashboardController extends Controller
 
         $this->view("users/updateGoals", 'Update goals', ['userDetails' => $this->userDetails, 'nutritionGoals' => $this->nutritionGoals]);
     }
+
+    public function addNutritionalIntake(){
+        if ($_SERVER['REQUEST_METHOD'] == 'POST'){
+            $today = date("Y-m-d H:i:s");  
+            /*
+                $calories = htmlspecialchars($_POST['calories_tracked']);
+                $proteins = htmlspecialchars($_POST['proteins_tracked']);
+                $lipids = htmlspecialchars($_POST['lipids_tracked']);
+                $carbohydrates = htmlspecialchars($_POST['carbohydrates_tracked']);
+                $fiber = htmlspecialchars($_POST['fiber_tracked']);
+            */
+            $result = $this->nutrition->addNutritionalIntake($this->email, $today, 10, 5, 30, 2, 10);
+
+            if ($result) {
+                header('Location: ' . BASE_URL . 'dashboard');
+                exit();
+            } else {
+                die('Error ! Please try again later.');
+            }
+        }
+    }
 }

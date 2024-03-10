@@ -80,7 +80,6 @@ class NutritionModel extends Model
         $id = $this->getUserBioInfo($email);
 
         if ($existingGoals) {
-            // Goals exist, perform update
             $query = "UPDATE nutritionalgoals SET calories_goal=?, proteins_goal=?, lipids_goal=?, carbohydrates_goal=?, fiber_goal=? WHERE id_user=?";
             $stmt = $this->db->prepare($query);
             $stmt->bindParam(1, $caloriesGoal);
@@ -92,7 +91,6 @@ class NutritionModel extends Model
 
             return $stmt->execute();
         } else {
-            // Goals don't exist, perform insert
             $query = "INSERT INTO nutritionalgoals (id_user, calories_goal, proteins_goal, lipids_goal, carbohydrates_goal, fiber_goal) VALUES (?, ?, ?, ?, ?, ?)";
             $stmt = $this->db->prepare($query);
             $stmt->bindParam(1, $id['id']);
@@ -104,6 +102,21 @@ class NutritionModel extends Model
 
             return $stmt->execute();
         }
+    }
+
+    public function addNutritionalIntake($email, $today, $calories, $proteins, $lipids, $carbohydrates, $fiber){
+        $id = $this->getUserBioInfo($email);
+        $query = "UPDATE nutritiontracking SET calories_tracked=calories_tracked+?, proteins_tracked=proteins_tracked+?, lipids_tracked=lipids_tracked+?, carbohydrates_tracked=carbohydrates_tracked+?, fiber_tracked=fiber_tracked+? 
+                  WHERE id_user=?";
+        $stmt = $this->db->prepare($query);
+        $stmt->bindParam(1, $calories);
+        $stmt->bindParam(2, $proteins);
+        $stmt->bindParam(3, $lipids);
+        $stmt->bindParam(4, $carbohydrates);
+        $stmt->bindParam(5, $fiber);
+        $stmt->bindParam(6, $id['id']); 
+
+        return $stmt->execute();
     }
     
 }

@@ -82,12 +82,5 @@
         </div>
       </div>
     </a>
-
   </section>
-  <!-- Card Footer -->
-  <footer class="border-t border-gray-100 pt-4">
-    <p class="text-sm text-gray-500 text-center">
-      Powered by <span class="font-bold">TailwindCSS</span>
-    </p>
-  </footer>
 </section>

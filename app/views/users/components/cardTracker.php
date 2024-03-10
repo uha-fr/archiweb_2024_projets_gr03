@@ -138,5 +138,12 @@
           Powered by <span class="font-bold">TailwindCSS</span>
         </p>
       </footer>
+      <form  id="addNutritionIntake"
+             action="<?php echo BASE_URL . "dashboard/addNutritionalIntake"; ?>" method="POST">
+             <button type="submit" class="inline-block text-white bg-[#93BE76] border-0 py-2 px-6 focus:outline-none hover:bg-[#C6E0B9] rounded text-lg">
+        add nutrition</button>
+    </form>   
     </section>
   </div>
+
+
