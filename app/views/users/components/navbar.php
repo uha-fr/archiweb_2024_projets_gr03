@@ -1,8 +1,8 @@
 <nav class="flex  h-28 mb-10 md:mb-5 lg:h-[96px]" id="navbarTop" navbar-scroll="true">
             <div class="sm:flex  items-stretch justify-between grow lg:mb-0 mb-5 py-5 px-10 ">
                 <div class="mb-5">
-                    <span class="my-0 flex text-dark font-semibold text-[1.35rem]/[1.2] text-slate-950	 ">Bonjour <?php echo ucfirst($userDetails["firstname"]) ?>👋 </span>
-                    <span class="pt-1 text-secondary-dark text-[0.95rem] font-medium text-slate-500	">Nous sommes contents de vous revoir.</span> 
+                    <span class="my-0 flex text-dark font-semibold text-[1.35rem]/[1.2] text-slate-950	 ">Hello <?php echo ucfirst($userDetails["firstname"]) ?>👋 </span>
+                    <span class="pt-1 text-secondary-dark text-[0.95rem] font-medium text-slate-500	">We are happy to see you again.</span> 
                 </div>
                 <div class="flex items-center lg:shrink-0 lg:flex-nowrap">
                     <div class="relative flex items-center lg:ml-4 sm:mr-0 mr-2"> <span class="absolute ml-4 leading-none -translate-y-1/2 top-1/2 text-muted"> <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">

@@ -12,7 +12,7 @@
 <body class="antialiased">
     <header class="text-gray-600 body-font shadow w-full">
         <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
-            <a href="#" class="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
+            <a href="<?php echo BASE_URL ?>" class="flex title-font font-medium items-center text-gray-900 md:mb-0">
                 <img src="<?php echo IMG_LOAD . '/logo.png' ?>" alt="logo" class="w-16 h-16 text-white p-2 rounded-full">
                 <span class="ml-3 text-xl">Manger</span>
             </a>
@@ -28,14 +28,14 @@
   <div class="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center">
     <div class="lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center">
       <h1 class="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900">
-        A healthy meal, every single day
+      Nourishing Lives, Every Day
       </h1>
       <p class="mb-8 leading-relaxed">
-        The smart 365-days-per-year food subscription that will make you eat healthy again. Tailored to your personal tastes and nutritional needs.
+      Savor the flavor of a healthier you with Manger's personalized nutrition tracking and meal planning.
       </p>
       <div class="flex justify-center">
-        <a href="#" class="inline-flex text-white bg-[#93BE76] border-0 py-2 px-6 focus:outline-none hover:bg-[#C6E0B9] rounded text-lg">Start Eating Well</a>
-        <a href="#" class="ml-4 inline-flex text-gray-700 bg-gray-100 border-0 py-2 px-6 focus:outline-none hover:bg-gray-200 rounded text-lg">Learn More &darr;</a>
+        <a href="<?php echo BASE_URL . "dashboard" ?>" class="inline-flex text-white bg-[#93BE76] border-0 py-2 px-6 focus:outline-none hover:bg-[#C6E0B9] rounded text-lg">Start Eating Well</a>
+        <a href="#tutorial" class="ml-4 inline-flex text-gray-700 bg-gray-100 border-0 py-2 px-6 focus:outline-none hover:bg-gray-200 rounded text-lg">Learn More &darr;</a>
       </div>
     </div>
     <div class="lg:max-w-lg lg:w-full md:w-1/2 w-5/6">
@@ -50,18 +50,18 @@
     <div class="flex flex-col md:flex-row justify-center md:space-x-8 space-y-6 md:space-y-0">
       <div class="flex-1">
         <img class="mx-auto mb-6 w-2/3 md:w-full" src="" alt="Step 1">
-        <h3 class="text-xl font-semibold mb-2">Tell us what you like (and what not)</h3>
-        <p class="text-gray-600">Your preferences will help us customize your meals to suit your taste.</p>
+        <h3 class="text-xl font-semibold mb-2">Create your account and set your nutritional goals</h3>
+        <p class="text-gray-600">Share your preferences and objectives to customize your meals and align them with your health aspirations.</p>
       </div>
       <div class="flex-1">
         <img class="mx-auto mb-6 w-2/3 md:w-full" src="" alt="Step 2">
-        <h3 class="text-xl font-semibold mb-2">Choose your meals</h3>
-        <p class="text-gray-600">Select from a variety of meals available on our menu.</p>
+        <h3 class="text-xl font-semibold mb-2">Explore and personalize your nutrition hub</h3>
+        <p class="text-gray-600">Add your favorite recipes, craft personalized meal plans, and effortlessly track your nutritional intake, all in one place.</p>
       </div>
       <div class="flex-1">
         <img class="mx-auto mb-6 w-2/3 md:w-full" src="" alt="Step 3">
-        <h3 class="text-xl font-semibold mb-2">We deliver your meals</h3>
-        <p class="text-gray-600">Enjoy delicious and healthy meals delivered to your door.</p>
+        <h3 class="text-xl font-semibold mb-2">Connect with a nutritionist for expert guidance</h3>
+        <p class="text-gray-600">Choose to follow a nutritionist who can curate specialized meal plans and set tailored nutritional goals to elevate your health journey.</p>
       </div>
     </div>
   </div>
@@ -143,7 +143,7 @@
       <div class="p-4 md:w-1/3 w-full">
         <div class="h-full bg-gray-100 p-8 rounded">
           <img alt="Photo of customer Dave Bryson" class="w-24 h-24 mb-4 rounded-full mx-auto" src="img/customers/dave.jpg">
-          <p class="leading-relaxed mb-6">Inexpensive, healthy and great-tasting meals, without even having to order manually! It feels truly magical.</p>
+          <p class="leading-relaxed mb-6">Manger is my nutrition ally! Simple steps, personalized plans, and delicious meals. It's my go-to for a healthier me !</p>
           <a class="inline-flex items-center">
             <div class="text-gray-900 font-medium text-lg">Dave Bryson</div>
           </a>
@@ -153,7 +153,7 @@
       <div class="p-4 md:w-1/3 w-full">
         <div class="h-full bg-gray-100 p-8 rounded">
           <img alt="Photo of customer Jane Doe" class="w-24 h-24 mb-4 rounded-full mx-auto" src="img/customers/jane.jpg">
-          <p class="leading-relaxed mb-6">I love the variety of options and the convenience. It's made my life so much easier!</p>
+          <p class="leading-relaxed mb-6">Effortless nutrition with Manger! Love the variety, ease of tracking, and the nutritionist option. My secret to staying healthy on the go!</p>
           <a class="inline-flex items-center">
             <div class="text-gray-900 font-medium text-lg">Jane Doe</div>
           </a>
@@ -163,7 +163,7 @@
       <div class="p-4 md:w-1/3 w-full">
         <div class="h-full bg-gray-100 p-8 rounded">
           <img alt="Photo of customer John Smith" class="w-24 h-24 mb-4 rounded-full mx-auto" src="img/customers/john.jpg">
-          <p class="leading-relaxed mb-6">Amazing service! The quality of the meals exceeded my expectations.</p>
+          <p class="leading-relaxed mb-6">Manger's user-friendly approach keeps me on track. From setting goals to following a nutritionist, it's my key to a healthier lifestyle.</p>
           <a class="inline-flex items-center">
             <div class="text-gray-900 font-medium text-lg">John Smith</div>
           </a>
@@ -229,7 +229,7 @@
       <h2 class="title-font font-semibold text-gray-900 tracking-widest text-sm mb-3">About us</h2>
       <nav class="list-none mb-10">
         <li class="mb-3">
-          <p>The smart 365-days-per-year food subscription that will make you eat healthy again. Tailored to your personal tastes and nutritional needs. </p>
+          <p>Our mission is to make healthy eating simple, enjoyable, and tailored to your unique preferences and goals. Whether you're tracking your nutritional intake, creating personalized meal plans, or connecting with expert nutritionists, Manger is your trusted companion on the journey to a healthier, happier you. Embrace wellness effortlessly with Manger.</p>
         </li>
         <li>
           <a href="#" class="text-gray-600 hover:text-gray-800">Learn More</a>
