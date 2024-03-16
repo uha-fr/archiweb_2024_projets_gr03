@@ -161,7 +161,7 @@ class NutritionModel extends Model
     public function addNutritionalIntake($email, $today, $calories, $proteins, $lipids, $carbohydrates, $fiber){
         $id = $this->getUserBioInfo($email);
         $query = "UPDATE nutritiontracking SET calories_tracked=calories_tracked+?, proteins_tracked=proteins_tracked+?, lipids_tracked=lipids_tracked+?, carbohydrates_tracked=carbohydrates_tracked+?, fiber_tracked=fiber_tracked+? 
-                  WHERE id_user=?";
+                  WHERE id_user=? AND DATE(date_tracked)=?";
         $stmt = $this->db->prepare($query);
         $stmt->bindParam(1, $calories);
         $stmt->bindParam(2, $proteins);
@@ -169,7 +169,18 @@ class NutritionModel extends Model
         $stmt->bindParam(4, $carbohydrates);
         $stmt->bindParam(5, $fiber);
         $stmt->bindParam(6, $id['id']); 
+        $stmt->bindParam(7, $today); 
 
+        return $stmt->execute();
+    }
+
+    public function resetNutritionalIntake($email){
+        $id = $this->getUserBioInfo($email);
+        $query = "UPDATE nutritiontracking SET calories_tracked=0, proteins_tracked=0, lipids_tracked=0, carbohydrates_tracked=0, fiber_tracked=0 
+        WHERE id_user=?";
+        $stmt = $this->db->prepare($query);
+        $stmt->bindParam(1, $id['id']);
+    
         return $stmt->execute();
     }
     
