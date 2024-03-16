@@ -8,7 +8,6 @@ $carbohydratesGoalValue = '';
 $fiberGoalValue = '';
 
 if ($nutritionGoals) {
-    // Populate form fields with existing values
     $caloriesGoalValue = $nutritionGoals['calories_goal'];
     $proteinsGoalValue = $nutritionGoals['proteins_goal'];
     $lipidsGoalValue = $nutritionGoals['lipids_goal'];

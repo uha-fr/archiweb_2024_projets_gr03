@@ -48,6 +48,42 @@ class NutritionModel extends Model
         }
     }
 
+    private function getNutritionsTrackedByDate($email, $date){
+        $query = "SELECT * FROM nutritiontracking AS nt
+        INNER JOIN users AS u ON nt.id_user = u.id
+        WHERE u.email=? AND DATE(nt.date_tracked)=?";
+       $stmt = $this->db->prepare($query);
+       $stmt->bindParam(1, $email);
+       $stmt->bindParam(2, $date);
+
+       if ($stmt->execute()) {
+        return $stmt->fetch(PDO::FETCH_ASSOC);
+        } else {
+            die("Error: " . implode(", ", $stmt->errorInfo()));
+        }
+    }
+
+    public function getTodaysUserNutritionsTracked($email){
+        $today = date("Y-m-d");
+        $nutritionTracked = $this->getNutritionsTrackedByDate($email, $today);
+
+        if (!$nutritionTracked) {
+                $query = "INSERT INTO nutritiontracking (id_user, date_tracked, calories_tracked, proteins_tracked, lipids_tracked, carbohydrates_tracked, fiber_tracked) 
+                VALUES ((SELECT id FROM users WHERE email=?), ?, 0, 0, 0, 0, 0)";
+                $stmt = $this->db->prepare($query);
+                $stmt->bindParam(1, $email);
+                $stmt->bindParam(2, $today);
+                if ($stmt->execute()) {
+                    $nutritionTracked = $this->getNutritionsTrackedByDate($email, $today);
+                } else {
+                    die("Error: " . implode(", ", $stmt->errorInfo()));
+                }
+        }
+        
+        return $nutritionTracked;
+    }
+
+
     public function getBMI($height, $weight, $age){
             $heightMeters = $height / 100;
             $bmi = $weight/ ($heightMeters ** 2);
@@ -56,24 +92,42 @@ class NutritionModel extends Model
     }
 
     public function calculatePourcentage($goals, $tracked){
-        if(!empty($goals)){
-            $caloriesPercentage = ($tracked['calories_tracked'] / $goals['calories_goal']) * 100;
-            $proteinPercentage = ($tracked['proteins_tracked'] / $goals['proteins_goal']) * 100;
-            $carbsPercentage = ($tracked['lipids_tracked'] / $goals['lipids_goal']) * 100;
-            $fatPercentage = ($tracked['carbohydrates_tracked'] / $goals['carbohydrates_goal']) * 100;
-            $fiberPercentage = ($tracked['fiber_tracked'] / $goals['fiber_goal']) * 100;
-        
-            return [
-                'calories' => $caloriesPercentage,
-                'proteins' => $proteinPercentage,
-                'lipids' => $carbsPercentage,
-                'carbohydrates' => $fatPercentage,
-                'fiber' => $fiberPercentage,
-            ];
-        }else{
-            return [];
+        $caloriesPercentage = $proteinPercentage = $lipidsPercentage = $carbohydratesPercentage = $fiberPercentage = 0;
+    
+        if (!empty($goals)) {
+            $caloriesGoal = max($goals['calories_goal'], 1);
+            $proteinsGoal = max($goals['proteins_goal'], 1);
+            $lipidsGoal = max($goals['lipids_goal'], 1);
+            $carbohydratesGoal = max($goals['carbohydrates_goal'], 1);
+            $fiberGoal = max($goals['fiber_goal'], 1);
+    
+            if ($caloriesGoal != 0) {
+                $caloriesPercentage = ($tracked['calories_tracked'] / $caloriesGoal) * 100;
+            }
+            if ($proteinsGoal != 0) {
+                $proteinPercentage = ($tracked['proteins_tracked'] / $proteinsGoal) * 100;
+            }
+            if ($lipidsGoal != 0) {
+                $lipidsPercentage = ($tracked['lipids_tracked'] / $lipidsGoal) * 100;
+            }
+            if ($carbohydratesGoal != 0) {
+                $carbohydratesPercentage = ($tracked['carbohydrates_tracked'] / $carbohydratesGoal) * 100;
+            }
+            if ($fiberGoal != 0) {
+                $fiberPercentage = ($tracked['fiber_tracked'] / $fiberGoal) * 100;
+            }
         }
+    
+        return [
+            'calories' => $caloriesPercentage,
+            'proteins' => $proteinPercentage,
+            'lipids' => $lipidsPercentage,
+            'carbohydrates' => $carbohydratesPercentage,
+            'fiber' => $fiberPercentage,
+        ];
     }
+    
+    
 
     public function updateNutritionalGoals($email, $caloriesGoal, $proteinsGoal, $lipidsGoal, $carbohydratesGoal, $fiberGoal){
         $existingGoals = $this->getUserNutritionalGoals($email);
@@ -107,7 +161,7 @@ class NutritionModel extends Model
     public function addNutritionalIntake($email, $today, $calories, $proteins, $lipids, $carbohydrates, $fiber){
         $id = $this->getUserBioInfo($email);
         $query = "UPDATE nutritiontracking SET calories_tracked=calories_tracked+?, proteins_tracked=proteins_tracked+?, lipids_tracked=lipids_tracked+?, carbohydrates_tracked=carbohydrates_tracked+?, fiber_tracked=fiber_tracked+? 
-                  WHERE id_user=?";
+                  WHERE id_user=? AND DATE(date_tracked)=?";
         $stmt = $this->db->prepare($query);
         $stmt->bindParam(1, $calories);
         $stmt->bindParam(2, $proteins);
@@ -115,7 +169,18 @@ class NutritionModel extends Model
         $stmt->bindParam(4, $carbohydrates);
         $stmt->bindParam(5, $fiber);
         $stmt->bindParam(6, $id['id']); 
+        $stmt->bindParam(7, $today); 
 
+        return $stmt->execute();
+    }
+
+    public function resetNutritionalIntake($email){
+        $id = $this->getUserBioInfo($email);
+        $query = "UPDATE nutritiontracking SET calories_tracked=0, proteins_tracked=0, lipids_tracked=0, carbohydrates_tracked=0, fiber_tracked=0 
+        WHERE id_user=?";
+        $stmt = $this->db->prepare($query);
+        $stmt->bindParam(1, $id['id']);
+    
         return $stmt->execute();
     }
     
