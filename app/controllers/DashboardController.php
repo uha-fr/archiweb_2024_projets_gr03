@@ -174,14 +174,14 @@ class DashboardController extends Controller
 
     private function getNutritionTracked()
     {
-        $tracked = $this->nutrition->getUserNutritionsTracked($this->email);
+        $tracked = $this->nutrition->getTodaysUserNutritionsTracked($this->email);
         $this->nutritionTracked = $tracked;
     }
 
     private function getNutritionPercentage()
     {
         $goals = $this->nutrition->getUserNutritionalGoals($this->email);
-        $tracked = $this->nutrition->getUserNutritionsTracked($this->email);
+        $tracked = $this->nutrition->getTodaysUserNutritionsTracked($this->email);
         $percentage = $this->nutrition->calculatePourcentage($goals, $tracked);
         $this->nutritionPercentage = $percentage;
     }
