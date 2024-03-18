@@ -1,72 +1,47 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tableau de Bord Admin</title>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-</head>
-<body class="min-h-screen bg-gray-100 flex">
+<?php include 'components/Sidebare.php';?>
+<div class="p-4 sm:ml-64">
+        <div class="p-4 mt-14"> 
 
-    <!-- Sidebar -->
-    <div class="w-64 bg-gray-800 text-white flex flex-col" style="min-height: 100vh;">
-        <div class="p-5 flex items-center space-x-4">
-            <img src="https://via.placeholder.com/50" alt="Profil" class="rounded-full">
-            <span class="font-bold">Nom Admin</span>
-        </div>
-        <hr class="border-gray-600">
-        <ul class="flex-grow">
-            <li>
-                <form action="" method="POST">
-                    <button name="action" value="gestionUtilisateurs" class="w-full text-left p-4 hover:bg-gray-700">Gestion des utilisateurs</button>
-                </form>
-            </li>
-            <li>
-                <form action="" method="POST">
-                    <button name="action" value="gestionNutritionnistes" class="w-full text-left p-4 hover:bg-gray-700">Gestion des nutritionnistes</button>
-                </form>
-            </li>
-        </ul>
-    </div>
+            <table id="myTable">
+                <thead>
+                    <td>Identifiant</td>
+                    <td>Nom</td>
+                    <td>Prenom</td>
+                    <td>Email</td>
+                    <td>Genre</td>
+                    <td>Operation</td>
+                </thead>
 
-    <!-- Contenu principal -->
-    <div class="flex-1 p-10">
-        <h1 class="text-4xl font-bold">
+                <tbody>
+
+              
             <?php
-            // Titre par défaut
-            $titre = "Bienvenue dans le tableau de bord de l'admin";
-            
-            // Modifier le titre selon l'action
-            if ($_SERVER["REQUEST_METHOD"] == "POST") {
-                switch ($_POST['action']) {
-                    case 'gestionUtilisateurs':
-                        $titre = "Gestion des utilisateurs";
-                        break;
-                    case 'gestionNutritionnistes':
-                        $titre = "Gestion des nutritionnistes";
-                        break;
-                }
-            }
-            
-            echo $titre;
+            foreach ($users as $user) :
             ?>
-        </h1>
-        <!-- Affichage conditionnel du contenu -->
-        <?php
-        if ($_SERVER["REQUEST_METHOD"] == "POST") {
-            switch ($_POST['action']) {
-                case 'gestionUtilisateurs':
-                    echo "<p>Vous êtes dans la section de gestion des utilisateurs.</p>";
-                    // Ajouter ici le contenu ou les formulaires pour la gestion des utilisateurs
-                    break;
-                case 'gestionNutritionnistes':
-                    echo "<p>Vous êtes dans la section de gestion des nutritionnistes.</p>";
-                    // Ajouter ici le contenu ou les formulaires pour la gestion des nutritionnistes
-                    break;
-            }
-        }
-        ?>
-    </div>
+                    <tr>
 
-</body>
-</html>
+                        <td><?= $user['id_user'] ?></td>
+                        <td><?= $user['firstname'] ?></td>
+                        <td><?= $user['lastname'] ?></td>
+                        <td><?= $user['email'] ?></td>
+                        <td><?= $user['sexe'] ?></td>
+                        <td> <a class="focus:outline-none text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900" href="deleteuser/<?= $user['id_user'] ?>"><i class="fa-solid fa-trash"></i></a></td>
+                    </tr>
+
+
+        <?php
+
+         endforeach
+            
+        ?>
+          </tbody>
+         </table>
+        </div>
+
+   
+</div>
+<script>
+
+let table = new DataTable('#myTable');
+
+</script>

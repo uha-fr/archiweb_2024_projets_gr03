@@ -9,6 +9,7 @@ class App{
     public function __construct() {
         $url = $this->parseUrl();
         //for the controller
+        unset($url[0]);
         if(isset($url[1])){
             $contollerName = ucfirst($url[1])."Controller";
             if(file_exists("../app/controllers/".$contollerName.".php")){

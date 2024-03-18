@@ -1,6 +1,6 @@
 <?php
 
-define('BASE_URL', 'http://localhost/archiweb_2024_projets_gr03/public/');
+define('BASE_URL', 'http://localhost/ProjetArchi/public/');
 
 define('PROJECT_ROOT', dirname(__DIR__));
 define('IMG_DIRECTORY', PROJECT_ROOT . '/public/assets/img');

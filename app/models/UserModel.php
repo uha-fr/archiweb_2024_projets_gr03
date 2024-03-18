@@ -7,6 +7,10 @@ class UserModel extends Model
     {
         parent::__construct();
     }
+    function database_connection()
+    {
+        return new \PDO("mysql:host=localhost;dbname=recipe_2", "root", "");
+    }
 
     public function getUserInfo($email)
     {
@@ -136,5 +140,34 @@ class UserModel extends Model
         $message = "Click the following link to reset your password: " . BASE_URL . "auth/reset?token=$token";
         mail($email, $subject, $message);
     }
+
+    public function getallusers (){
+
+        $query = 'SELECT * FROM users';
+        $stmt = $this->db->prepare($query);
+        $stmt->execute();
+        try {
+            $stmt->execute();
+            return $stmt->fetchAll(PDO::FETCH_ASSOC);
+        } catch (PDOException $e) {
+            die("Error checking user: " . $e->getMessage());
+        }
+
+    }
+     public function deleteUser($id){
+        $query = "DELETE FROM users WHERE id_user = :id";
+        $stmt = $this->db->prepare($query);
+
+        $stmt->bindParam(':id', $id);
+        try {
+            $stmt->execute();
+            return $stmt->fetch(PDO::FETCH_ASSOC) !== false;
+        } catch (PDOException $e) {
+            die("Error checking user: " . $e->getMessage());
+        }
+
+     }
+
+
 
 }
