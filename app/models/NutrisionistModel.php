@@ -104,6 +104,33 @@ class NutritionistModel extends Model
         }
     }
 
+    public function getallusers (){
+
+        $query = 'SELECT * FROM users';
+        $stmt = $this->db->prepare($query);
+        $stmt->execute();
+        try {
+            $stmt->execute();
+            return $stmt->fetchAll(PDO::FETCH_ASSOC);
+        } catch (PDOException $e) {
+            die("Error checking user: " . $e->getMessage());
+        }
+
+    }
+     public function deleteNutritionist($id){
+        $query = "DELETE FROM nutritionist WHERE id_user = :id";
+        $stmt = $this->db->prepare($query);
+
+        $stmt->bindParam(':id', $id);
+        try {
+            $stmt->execute();
+            return $stmt->fetch(PDO::FETCH_ASSOC) !== false;
+        } catch (PDOException $e) {
+            die("Error checking user: " . $e->getMessage());
+        }
+
+     }
+
     
 
 }
